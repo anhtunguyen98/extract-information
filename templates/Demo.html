@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/Demo.css">
+</head>
+<body>
+    <div class="left">
+        <div class="content">
+            <div class="row1">
+                <div class="postagging">
+                    <h2>Trích xuất thông tin</h2>
+                </div>
+                <div class="desc">
+                    <p>Công cụ trích xuất thông tin từ câu hỏi pháp luật</p>
+                    <p> Nhập văn bản vào phần bên trên</p>
+                    
+                </div>
+            </div>
+            <form action="" method="POST">
+            <div class="row2">
+                <textarea rows="15" id="text_input" name="input_text" placeholder="Nhập câu hỏi..." ></textarea>
+            </div>
+            <div class="row3">
+                <div id="text_view" ></div>
+
+            </div>
+
+            <div class="row4">
+
+                    <button type="submit" value="Submit" onclick="return vote_hl()"   >Highlight Thông tin</button>
+                    <button   onClick="window.location.reload();" >Reset</button>
+            </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="right">
+        <div class="row1">
+            <div class="head">
+                <h1>Công cụ trích xuất thông tin từ câu hỏi pháp luật</h1>
+                <p>Sinh viên: Nguyễn Anh Tú</p>
+            </div>
+            <div class="logo">
+                <img src="static/logo.jpg" alt="ptit">
+            </div>
+        </div>
+        <div class="row2">
+            <ul>
+                <li>
+                    <span>Action of vehicle</span>
+                    <a class="tag bg-ffb5ca">A</a>
+                </li>
+                <li>
+                    <a class="tag bg-fea159">AC</a>
+                    <span>Alcohol concentration</span>
+                </li>
+                <li>
+                    <span>Annotation</span>
+                    <a class="tag bg-007100 cl-fff">ANO</a>
+                </li>
+                <li>    
+                    <a class="tag bg-ff0091">DL</a>
+                    <span>Driving license</span>
+                </li>
+                <li>
+                    <span>Additional information about vehicle</span>
+                    <a class="tag bg-000000 cl-fff">IF1</a>
+                </li>
+                <li>    
+                    <a class="tag bg-f7ffd0">IF2</a>
+                    <span>Additional information about traffic light</span>
+                </li>
+                
+                <li>
+                    <span>Additional information about participant</span>
+                    <a class="tag bg-27008d cl-fff">IF3</a>
+                    
+                </li>
+                <li>
+                    <a class="tag bg-66ff95">IF4</a>
+                    <span>Additional information</span>
+                </li>
+                <li>
+                    <span>Location</span>
+                    <a class="tag bg-b20024 cl-fff">L</a>
+                </li>
+                <li>
+                    <a class="tag bg-933d05 cl-fff">QT</a>
+                    <span>Question type</span>
+                </li>
+                <li>
+                    <span>Speed</span>
+                    <a class="tag bg-00bbff">SP</a>
+                </li>
+                <li>
+                    <a class="tag bg-6782f0">TI</a>
+                    <span>Transport instructor</span>
+                </li>
+                <li>
+                    <span>Traffic light</span>
+                    <a class="tag bg-9b008c cl-fff">TL</a>
+                </li>
+                <li>
+                    <a class="tag bg-d3d3d3">TP</a>
+                    <span>Traffic participant</span>
+                </li>
+                <li>
+                    <span>Type of vehicle</span>
+                    <a class="tag bg-ff0000">TV</a>
+                </li>
+                <li>
+                    <a class="tag bg-a240dd">V</a>
+                    <span>Value</span>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function vote_hl() {
+            var text = document.getElementById("text_input").value;
+            var dict = {text: text};
+            var req = new XMLHttpRequest();
+            req.open("POST", "/gen", false);
+            req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            req.send(JSON.stringify(dict));
+
+            var resp = JSON.parse(req.response).text_tagged;
+
+
+            var st2 = resp.text;
+
+            var view = document.getElementById("text_view");
+            view.innerHTML = st2;
+            alert("Hoàn thành");
+            return false;
+        }
+
+
+
+</script>

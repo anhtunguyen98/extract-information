@@ -1,0 +1,1 @@
+MODEL_DIR='./model/crf_model.joblib'
