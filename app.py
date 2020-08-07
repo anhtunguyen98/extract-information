@@ -36,8 +36,10 @@ def vote():
 
 if __name__=='__main__':
     test_sentence = "xe máy đi với tốc độ hơn 80 km/h bị phạt bao nhiều tiền"
-    # test_sentence ="c"
+    # test_sentence
+    app.run(host='0.0.0.0',debug=False,port=5000)
 
-    app.run(host='0.0.0.0', debug=False)
+
+
 
 
