@@ -85,10 +85,14 @@ class ModelInfer:
                 if new_tags[i - 1] != 'O':
                     st1.append(new_words[i])
                     st2.append('O')
-
+                    print(i)
                     continue
                 else:
-                    st1[-1] = st1[-1] + '_' + new_words[i]
+                    if i==0:
+                        st1.append(new_words[i])
+                        st2.append('O')
+                    else:
+                        st1[-1] = st1[-1] + '_' + new_words[i]
             elif new_tags[i][0] == 'B':
                 tag = "" + new_tags[i][2:]
 
@@ -98,6 +102,5 @@ class ModelInfer:
             elif new_tags[i][0] == 'I':
                 st1[-1] = st1[-1] + '_' + new_words[i]
         return st1, st2
-
 
 

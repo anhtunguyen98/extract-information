@@ -29,6 +29,7 @@ def vote():
 
 
     text={'text':text}
+    print(text)
     return json.dumps({'success': True, 'text_tagged': text}), 200, {'Content-Type': 'application/json; charset=UTF-8'}
 
 
