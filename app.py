@@ -15,6 +15,8 @@ def vote():
     print("vote")
     text = request.get_json()["text"]
     st1,st2=model.res_sentence(text)
+    print(st1)
+    print(st2)
     text=""
 
     p='<p align="center" class="tag_{}">{} <br> {}</p>'
@@ -29,7 +31,7 @@ def vote():
 
 
     text={'text':text}
-    print(text)
+    # print(text)
     return json.dumps({'success': True, 'text_tagged': text}), 200, {'Content-Type': 'application/json; charset=UTF-8'}
 
 

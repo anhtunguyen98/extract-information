@@ -43,19 +43,20 @@ body{
 .left .row1 .desc{
     width: 58%;
 }
+
 .left .row1 .postagging h2{
     text-align: center;
     text-transform: uppercase;
-    color: #02e31a;
+    color: #190556;
     font-weight: normal;
     margin: 5px 9px;
-    background: #fff;
+
     font-size: 30px;
     border-radius: 8px;
 }
 .left .row1 .desc p{
     margin: 0;
-    font-size: 15px;
+    font-size: 18px;
 }
 .left textarea{
     height: 270px;
@@ -72,7 +73,7 @@ body{
     margin-top: 35px;
 }
 .left .row4 button{
-    background: #00e428;
+    background: #081f7c;
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -158,13 +159,15 @@ body{
 }
 .bg-fea159{
     background: darkgreen;
+    color:white;
 }
 .bg-007100{
     background: black;
-    color: white
+    color: white;
 }
 .bg-ff0091{
     background: darkblue;
+    color: white;
 }
 .bg-000000{
     background: brown;

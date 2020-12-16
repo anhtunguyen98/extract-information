@@ -88,7 +88,7 @@ class ModelInfer:
                     print(i)
                     continue
                 else:
-                    if i==0:
+                    if i == 0:
                         st1.append(new_words[i])
                         st2.append('O')
                     else:
