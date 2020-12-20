@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trích xuất thực thể</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css" />
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">Trích xuất thực thể</a>
+            </div>
+            <!-- <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+
+    <!-- <div class="jumbotron text-center">
+        <h1>Company</h1>
+        <p>We specialize in blablabla</p>
+        <form>
+            <div class="input-group">
+                <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger">Subscribe</button>
+                </div>
+            </div>
+        </form>
+    </div> -->
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid">
+        <h1 class="u-h3 u-b-sm">Trích xuất thông tin thực thể</h1>
+        <div class="row">
+            <form action="" method="POST">
+                <div class="col-sm-6">
+                    <div class="question">
+                        <label for="exampleFormControlTextarea1">Câu hỏi</label>
+                        <textarea class="form-control" id="text_input" rows="3"
+                            placeholder="Nhập câu hỏi ...(vd: xe máy chạy quá tốc độ 80 km/h bị phạt không ?)"></textarea>
+                    </div>
+                    <div class="model">
+                        <label for="exampleFormControlSelect1">
+                            Model
+                            <span data-tooltip="Statistical language model to use" class="d-input__help u-hide-sm"><svg
+                                    aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" class="o-icon"
+                                    style="min-width: 16px;">
+                                    <use xlink:href="#svg_help"></use>
+                                </svg></span>
+                        </label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>CRF</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div id="huhu">
+                        <button type="submit" class="btn btn-warning" value="Submit"
+                            onclick="return vote_hl()">Highlight Thông tin</button>
+                        <button onClick="window.location.reload();" class="btn btn-success">Reset</button>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label>Nhãn</label>
+                    <div>
+                        <label for="A" class="d-input__option u-t-xs u-strong a" data-toggle="popover" data-trigger="hover" data-content="hahahaha">
+                            <span class="radius_option" d-entity="A"></span>
+                        </label>
+                        <label for="AC" class="d-input__option u-t-xs u-strong ac">
+                            <span class="radius_option" d-entity="AC"></span>
+                        </label>
+                        <label for="ANO" class="d-input__option u-t-xs u-strong ano">
+                            <span class="bg-007100 radius_option" d-entity="ANO"></span>
+                        </label>
+                        <label for="DL" class="d-input__option u-t-xs u-strong dl">
+                            <span class="bg-ff0091 radius_option" d-entity="DL"></span>
+                        </label>
+                        <label for="IF1" class="d-input__option u-t-xs u-strong if1">
+                            <span class="bg-000000 radius_option" d-entity="IF1"></span>
+                        </label>
+                        <label for="IF2" class="d-input__option u-t-xs u-strong if2">
+                            <span class="bg-f7ffd0 radius_option" d-entity="IF2"></span>
+                        </label>
+                        <label for="IF3" class="d-input__option u-t-xs u-strong if3">
+                            <span class="bg-27008d radius_option" d-entity="IF3"></span>
+                        </label>
+                        <label for="IF4" class="d-input__option u-t-xs u-strong if4">
+                            <span class="bg-66ff95 radius_option" d-entity="IF4"></span>
+                        </label>
+
+                        <label for="L" class="d-input__option u-t-xs u-strong l">
+                            <span class="bg-b20024 radius_option" d-entity="L"></span>
+                        </label>
+                        <label for="QT" class="d-input__option u-t-xs u-strong qt">
+                            <span class="bg-933d05 radius_option" d-entity="QT"></span>
+                        </label>
+                        <label for="SP" class="d-input__option u-t-xs u-strong sp">
+                            <span class="bg-00bbff radius_option" d-entity="SP"></span>
+                        </label>
+                        <label for="TI" class="d-input__option u-t-xs u-strong ti">
+                            <span class="bg-6782f0 radius_option" d-entity="TI"></span>
+                        </label>
+                        <label for="TL" class="d-input__option u-t-xs u-strong tl">
+                            <span class="bg-9b008c radius_option" d-entity="TL"></span>
+                        </label>
+                        <label for="TP" class="d-input__option u-t-xs u-strong tp">
+                            <span class="bg-d3d3d3 radius_option" d-entity="TP"></span>
+                        </label>
+                        <label for="TV" class="d-input__option u-t-xs u-strong tv">
+                            <span class="bg-ff0000 radius_option" d-entity="TV"></span>
+                        </label>
+                        <label for="V" class="d-input__option u-t-xs u-strong v">
+                            <span class="bg-a240dd radius_option" d-entity="V"></span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-grey b-color">
+        <div id="text_view"></div>
+    </div>
+
+    <div class=" b-color text-center">
+        <div class="row row-eq-height mb-0">
+            <div class="col-sm-3" d-entity="A">
+                <span id="A">0 </span>
+                <span>Action of vehicle</span>
+            </div>
+            <div class="col-sm-3" d-entity="AC">
+                <span id="AC">0 </span>
+                <span>Alcohol concentration</span>
+            </div>
+            <div class="col-sm-3" d-entity="ANO">
+                <span id="ANO">0 </span>
+                <span>Annotation</span>
+            </div>
+            <div class="col-sm-3" d-entity="DL">
+                <span id="DL">0 </span>
+                <span>Driving license</span>
+            </div>
+        </div>
+        <div class="row row-eq-height mb-0">
+            <div class="col-sm-3" d-entity="IF1">
+                <span id="IF1">0 </span>
+                <span>Additional information about vehicle</span>
+            </div>
+            <div class="col-sm-3" d-entity="IF2">
+                <span id="IF2">0 </span>
+                <span>Additional information about traffic light</span>
+            </div>
+            <div class="col-sm-3" d-entity="IF3">
+                <span id="IF3">0 </span>
+                <span>Additional information about participant</span>
+            </div>
+            <div class="col-sm-3" d-entity="IF4">
+                <span id="IF4">0 </span>
+                <span>Additional information</span>
+            </div>
+        </div>
+
+        <div class="row row-eq-height mb-0">
+            <div class="col-sm-3" d-entity="L">
+                <span id="L">0 </span>
+                <span>Location</span>
+            </div>
+            <div class="col-sm-3" d-entity="QT">
+                <span id="QT">0 </span>
+                <span>Question type</span>
+            </div>
+            <div class="col-sm-3" d-entity="SP">
+                <span id="SP">0 </span>
+                <span>Speed</span>
+            </div>
+            <div class="col-sm-3" d-entity="TI">
+                <span id="TI">0 </span>
+                <span>Transport instructor</span>
+            </div>
+        </div>
+
+        <div class="row row-eq-height mb-0">
+            <div class="col-sm-3" d-entity="TL">
+                <span id="TL">0 </span>
+                <span>Traffic light</span>
+            </div>
+            <div class="col-sm-3" d-entity="TP">
+                <span id="TP">0 </span>
+                <span>Traffic participant</span>
+            </div>
+            <div class="col-sm-3" d-entity="TV">
+                <span id="TV">0 </span>
+                <span>Type of vehicle</span>
+            </div>
+            <div class="col-sm-3" d-entity="V">
+                <span id="V">0 </span>
+                <span>Value</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>CÔNG CỤ TRÍCH XUẤT THÔNG TIN TỪ CÂU HỎI PHÁP LUẬT</p>
+    </footer>
+
+    <script>
+        $(function () {
+        })
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+
+        function vote_hl() {
+            var text = document.getElementById("text_input").value;
+            var dict = { text: text };
+            var req = new XMLHttpRequest();
+            req.open("POST", "/gen", false);
+            req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            req.send(JSON.stringify(dict));
+
+            var resp = JSON.parse(req.response).text_tagged;
+            var st2 = resp.text;
+
+            var n_tags = JSON.parse(req.response).tags
+            console.log(n_tags)
+            for (let key in n_tags) {
+                let value = n_tags[key];
+                let hahaho = document.getElementById(key);
+                hahaho.innerHTML = value;
+                // do something with "key" and "value" variables
+            }
+
+            var view = document.getElementById("text_view");
+            view.innerHTML = st2;
+            // alert("Hoàn thành");
+            $('[data-toggle="popover"]').popover()
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
